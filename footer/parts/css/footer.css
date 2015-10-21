@@ -1,0 +1,478 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+
+
+
+
+html, body {
+  /* you need to set this to assign to the main element a min height of 100% */
+  height: 100%;
+}
+
+
+a {
+  color: #6cac70;
+  text-decoration: none;
+}
+
+.ftop {
+	    margin: 0px 0 63px;
+}
+
+
+.ufooter-wrapper {
+	background-color:#000;
+	position:fixed;
+	right:0;
+	width:100%;
+	padding:15px 0;
+	z-index: 9999999;
+	bottom:0;
+}
+
+
+.logo {
+	float:left;
+	background-image: url('/wp-content/themes/canvas/footer/img/mainlogo.png');
+	background-repeat:no-repeat;
+	display:block;
+	width:80px;
+	height:25px;
+	margin-left:20px;
+	
+}
+
+.logo-home {
+	float:left;
+	background-image: url('/wp-content/themes/canvas/footer/img/mainlogo.png');
+	background-repeat:no-repeat;
+	display:block;
+	width:80px;
+	height:25px;
+	margin-left:20px;
+	position:relative;
+	top:20px;
+}
+
+.menu-logo {
+	padding:10px;
+	width:80px;
+}
+
+.cd-navigation li {
+	border-bottom:1px solid #444;
+}
+
+.cd-navigation li:last-child {
+	border-bottom:0;
+}
+
+.cd-navigation li a {
+	text-transform:uppercase;
+	font-size:15px;
+	font-family: "Titillium Web", sans-serif;
+}
+
+.nyc-prop {
+}
+
+.nyc-prop {
+	padding:10px;
+	color:#fff;
+	font-weight:400;
+	font-family: "Titillium Web", sans-serif;
+	font-size:17px;
+}
+	
+
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-img-replace {
+  /* replace text with a background-image */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+.cd-main-content {
+  /* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
+  min-height: 100%;
+  position: relative;
+  background-color: #f5f4e9;
+  z-index: 2;
+  padding-top: 50px;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.cd-main-content.lateral-menu-is-open {
+  /* translate to show the lateral menu - all content needs to be put in the .cd-main-content to translate*/
+  -webkit-transform: translateX(-260px);
+  -moz-transform: translateX(-260px);
+  -ms-transform: translateX(-260px);
+  -o-transform: translateX(-260px);
+  transform: translateX(-260px);
+}
+@media only screen and (min-width: 768px) {
+  .cd-main-content {
+    padding-top: 70px;
+  }
+}
+
+
+header.lateral-menu-is-open {
+  /* translate to show the lateral menu */
+ 
+}
+header.is-fixed {
+  position: fixed;
+}
+@media only screen and (min-width: 768px) {
+  header {
+   
+  }
+}
+
+#cd-logo {
+  display: block;
+  float: left;
+  margin: 12px 0 0 20px;
+}
+#cd-logo img {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  #cd-logo {
+    margin: 22px 0 0 30px;
+  }
+}
+
+#cd-top-nav {
+  position: absolute;
+  top: 0;
+  right: 120px;
+  height: 100%;
+  display: none;
+}
+#cd-top-nav ul {
+  height: 100%;
+  padding-top: 18px;
+}
+#cd-top-nav li {
+  display: inline-block;
+  margin-right: 1em;
+}
+#cd-top-nav a {
+  display: inline-block;
+  padding: .5em;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#cd-top-nav a.current {
+  background-color: #242e30;
+}
+.no-touch #cd-top-nav a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+@media only screen and (min-width: 768px) {
+  #cd-top-nav {
+    display: block;
+  }
+}
+
+#cd-menu-trigger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  background-color: #202020;
+  z-index: 9999999;
+}
+#cd-menu-trigger .cd-menu-text {
+  height: 100%;
+  text-transform: uppercase;
+  color: #FFF;
+  font-weight: 600;
+  display: none;
+}
+#cd-menu-trigger .cd-menu-icon {
+  /* this span is the central line in the menu menu */
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 18px;
+  height: 2px;
+  background-color: #FFF;
+  /* these are the upper and lower lines in the menu menu */
+}
+#cd-menu-trigger .cd-menu-icon::before, #cd-menu-trigger .cd-menu-icon:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: inherit;
+  left: 0;
+}
+#cd-menu-trigger .cd-menu-icon::before {
+  bottom: 5px;
+}
+#cd-menu-trigger .cd-menu-icon::after {
+  top: 5px;
+}
+#cd-menu-trigger.is-clicked .cd-menu-icon {
+  background-color: rgba(255, 255, 255, 0);
+}
+#cd-menu-trigger.is-clicked .cd-menu-icon::before, #cd-menu-trigger.is-clicked .cd-menu-icon::after {
+  background-color: white;
+}
+#cd-menu-trigger.is-clicked .cd-menu-icon::before {
+  bottom: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#cd-menu-trigger.is-clicked .cd-menu-icon::after {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+@media only screen and (min-width: 768px) {
+  #cd-menu-trigger {
+    width: 40px;
+    padding-left: 1.25em;
+  }
+  #cd-menu-trigger .cd-menu-text {
+    display: inline-block;
+    line-height: 70px;
+  }
+  #cd-menu-trigger .cd-menu-icon {
+    left: auto;
+    right: 1.25em;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+#cd-lateral-nav {
+  position: fixed;
+  right: 0;
+bottom:7%;
+border-bottom: 1px solid #444;
+  visibility: hidden;
+  /* the secondary navigation is covered by the main element */
+  z-index: 1;
+  width: 275px;
+background-color: rgba(0, 0, 0, 0.77);
+  overflow-y: auto;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: -webkit-transform .4s 0s, visibility 0s .4s;
+  -moz-transition: -moz-transform .4s 0s, visibility 0s .4s;
+  transition: transform .4s 0s, visibility 0s .4s;
+  /* this creates the subtle slide in animation of the navigation */
+  -webkit-transform: translateX(280px);
+  -moz-transform: translateX(280px);
+  -ms-transform: translateX(280px);
+  -o-transform: translateX(280px);
+  transform: translateX(280px);
+}
+#cd-lateral-nav .cd-navigation {
+  margin: 10px 0 1px;
+}
+#cd-lateral-nav .sub-menu {
+  padding: 0 10px 20px 15px;
+  display: none;
+}
+#cd-lateral-nav a {
+	display: block;
+	line-height: 1.5em;
+	padding: 4px 16px 4px 15px;
+	color: #aab5b7;
+}
+#cd-lateral-nav a.current {
+  background-color: #3a4a4d;
+  color: #FFF;
+}
+.no-touch #cd-lateral-nav a:hover {
+  color: #FFF;
+}
+@media only screen and (min-width: 768px) {
+  #cd-lateral-nav .cd-navigation {
+
+  }
+}
+#cd-lateral-nav.lateral-menu-is-open {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  visibility: visible;
+  -webkit-transition: -webkit-transform .4s 0s, visibility 0s 0s;
+  -moz-transition: -moz-transform .4s 0s, visibility 0s 0s;
+  transition: transform .4s 0s, visibility 0s 0s;
+  /* smooth the scrolling on touch devices - webkit browsers */
+  -webkit-overflow-scrolling: touch;
+  z-index: 999999;
+}
+
+/* style menu items which have a submenu  */
+#cd-lateral-nav .item-has-children > a {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 600;
+  /* this is the right arrow to show that the item has a submenu  */
+}
+#cd-lateral-nav .item-has-children > a::after {
+  content: '';
+  display: block;
+  height: 11px;
+  width: 8px;
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 1em;
+  background: url("../img/cd-arrow.svg") no-repeat center center;
+  background-size: 8px 11px;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+#cd-lateral-nav .item-has-children > a.submenu-open::after {
+  -webkit-transform: translateY(-50%) rotate(90deg);
+  -moz-transform: translateY(-50%) rotate(90deg);
+  -ms-transform: translateY(-50%) rotate(90deg);
+  -o-transform: translateY(-50%) rotate(90deg);
+  transform: translateY(-50%) rotate(90deg);
+}
+
+#cd-lateral-nav .socials {
+  padding: 0 32px;
+}
+#cd-lateral-nav .socials:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#cd-lateral-nav .socials a {
+  height: 32px;
+  width: 32px;
+  float: left;
+  padding: 0;
+  background-image: url("parts/img/cd-socials.svg");
+  background-repeat: no-repeat;
+  background-size: 128px 64px;
+  background-color: #FFF;
+  margin-right: .5em;
+  border-radius: 0.25em;
+}
+#cd-lateral-nav .socials a.cd-twitter {
+  background-position: 0 0;
+}
+#cd-lateral-nav .socials a.cd-github {
+  background-position: -32px 0;
+}
+#cd-lateral-nav .socials a.cd-facebook {
+  background-position: -64px 0;
+}
+#cd-lateral-nav .socials a.cd-google {
+  background-position: -96px 0;
+}
+.no-touch #cd-lateral-nav .socials a:hover {
+  background-color: #4e6361;
+}
+.no-touch #cd-lateral-nav .socials a:hover.cd-twitter {
+  background-position: 0 -32px;
+}
+.no-touch #cd-lateral-nav .socials a:hover.cd-github {
+  background-position: -32px -32px;
+}
+.no-touch #cd-lateral-nav .socials a:hover.cd-facebook {
+  background-position: -64px -32px;
+}
+.no-touch #cd-lateral-nav .socials a:hover.cd-google {
+  background-position: -96px -32px;
+}
+
+/* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (max-width : 480px) {
+	    .ufooter-wrapper {
+    background-color: #000;
+    position: relative;
+    right: 0;
+    width: 100%;
+    padding: 20px 0 30px;
+    z-index: 9999999;
+}
+
+    }
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 320px) {
+        
+    }

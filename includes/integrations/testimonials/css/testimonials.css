@@ -1,0 +1,108 @@
+/**
+ * Testimonials
+ *
+ * Styles which integrate this theme with the Testimonials plugin.
+ * This stylesheet is only enqueued if Testimonials is activated.
+ * http://wordpress.org/plugins/testimonials-by-woothemes/
+ */
+/**
+ * Variables
+ */
+/**
+ * Functions
+ */
+.widget_woothemes_testimonials .quote {
+  width: 100%;
+  list-style: none;
+  margin-bottom: 2.618em;
+  float: left;
+}
+.widget_woothemes_testimonials .quote blockquote {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.widget_woothemes_testimonials .quote blockquote:before {
+  display: none !important;
+}
+.widget_woothemes_testimonials .quote a.avatar-link {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 2.244em 1.618em 1.618em 0;
+}
+.widget_woothemes_testimonials .quote a.avatar-link img {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.widget_woothemes_testimonials .quote .author {
+  display: inline-block;
+  margin: 1.618em 0 0 0;
+  font-weight: 700;
+  font-style: normal;
+}
+.widget_woothemes_testimonials .quote .author .excerpt {
+  display: block;
+  font-weight: normal;
+  font-style: italic;
+}
+.widget_woothemes_testimonials .quote .author .url {
+  display: block;
+  font-weight: 400;
+}
+@media only screen and (min-width: 768px) {
+  #main .widget_woothemes_testimonials .columns-2:after,
+  #main .widget_woothemes_testimonials .columns-3:after,
+  #main .widget_woothemes_testimonials .columns-4:after,
+  #main .widget_woothemes_testimonials .columns-5:after,
+  #main .widget_woothemes_testimonials .columns-6:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  #main .widget_woothemes_testimonials .columns-2 .quote,
+  #main .widget_woothemes_testimonials .columns-3 .quote,
+  #main .widget_woothemes_testimonials .columns-4 .quote,
+  #main .widget_woothemes_testimonials .columns-5 .quote,
+  #main .widget_woothemes_testimonials .columns-6 .quote {
+    float: left;
+    margin-right: 3.8%;
+  }
+  #main .widget_woothemes_testimonials .columns-2 .quote.first,
+  #main .widget_woothemes_testimonials .columns-3 .quote.first,
+  #main .widget_woothemes_testimonials .columns-4 .quote.first,
+  #main .widget_woothemes_testimonials .columns-5 .quote.first,
+  #main .widget_woothemes_testimonials .columns-6 .quote.first {
+    clear: both;
+  }
+  #main .widget_woothemes_testimonials .columns-2 .quote.last,
+  #main .widget_woothemes_testimonials .columns-3 .quote.last,
+  #main .widget_woothemes_testimonials .columns-4 .quote.last,
+  #main .widget_woothemes_testimonials .columns-5 .quote.last,
+  #main .widget_woothemes_testimonials .columns-6 .quote.last {
+    margin-right: 0;
+  }
+  #main .widget_woothemes_testimonials .columns-2 .quote {
+    width: 48%;
+  }
+  #main .widget_woothemes_testimonials .columns-3 .quote {
+    width: 30.75%;
+  }
+  #main .widget_woothemes_testimonials .columns-4 .quote {
+    width: 22.05%;
+  }
+  #main .widget_woothemes_testimonials .columns-5 .quote {
+    width: 16.9%;
+  }
+  #main .widget_woothemes_testimonials .columns-6 .quote {
+    width: 13.5%;
+  }
+}
